@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './user-form.styles.css';
 
-const UserForm = () => {
+const UserForm = ({ onUserAdd }) => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
 
@@ -9,9 +9,17 @@ const UserForm = () => {
 
   const handleUserEmailOnChange = (event) => setEmail(event.target.value);
 
+  const clearInputFields = () => {
+    setName('');
+    setEmail('');
+  };
+
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log(name, email);
+    if (name && email) {
+      onUserAdd({ name, email });
+      clearInputFields();
+    }
   };
 
   return (
