@@ -1,7 +1,7 @@
-import UserForm from './components/user-form/user-form.component';
+import Users from './views/users/users.view';
 
 const App = () => {
-  return <UserForm />;
+  return <Users />;
 };
 
 export default App;

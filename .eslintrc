@@ -31,6 +31,7 @@
                 "args": "after-used",
                 "ignoreRestSiblings": false
             }
-        ]
+        ],
+        "no-undef": "off"
     }
 }
